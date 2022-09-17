@@ -1,0 +1,25 @@
+{
+  "name": "generative-geometry",
+  "description": "Coral-like structure growing on top of 3d geometry with OBJ and STL export.",
+  "private": true,
+  "dependencies": {
+    "bunny": "^1.0.1",
+    "debounce": "^1.2.1",
+    "fit-rect": "^1.0.3",
+    "geo-ambient-occlusion": "^3.0.4",
+    "geom-center-and-normalize": "^1.0.3",
+    "geom-normals": "^1.0.1",
+    "in-browser-download": "^2.0.0",
+    "isosurface-generator": "^2.0.1",
+    "ndarray": "^1.0.19",
+    "pex-cam": "^2.8.0",
+    "pex-context": "^2.10.4",
+    "pex-math": "^3.0.0-4",
+    "pex-random": "^1.0.1",
+    "primitive-geometry": "^1.2.1",
+    "serialize-stl": "^1.0.2",
+    "serialize-wavefront-obj": "^1.0.0",
+    "space-colonization": "^0.2.0",
+    "voxelize": "^1.0.0"
+  }
+}

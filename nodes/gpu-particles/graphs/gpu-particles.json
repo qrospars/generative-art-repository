@@ -1,0 +1,601 @@
+{
+  "id": "0f188310-173d-11ea-8ae2-637aabfbef75",
+  "version": "1.0.0-beta.2",
+  "name": "gpu-particles",
+  "nodes": [
+    {
+      "id": "UBrgG4V7",
+      "name": "Context",
+      "x": 225,
+      "y": -105,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "resolution",
+          "value": "960 x 540 - qHD"
+        },
+        {
+          "name": "portrait",
+          "value": false
+        },
+        {
+          "name": "align",
+          "value": "center"
+        },
+        {
+          "name": "Auto clear",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "Ng0MrJVLW",
+      "name": "Raw Camera",
+      "x": 225,
+      "y": 15,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "jE4h8cUB",
+            "port": "out"
+          }
+        },
+        {
+          "name": "near",
+          "value": 1
+        },
+        {
+          "name": "far",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "id": "RaXIqZID",
+      "name": "Time",
+      "x": 225,
+      "y": 75,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "Ng0MrJVLW",
+            "port": "out"
+          }
+        }
+      ]
+    },
+    {
+      "id": "AJPzLj7V",
+      "name": "ps-module",
+      "x": 547,
+      "y": -103,
+      "templateName": "Custom",
+      "params": []
+    },
+    {
+      "id": "BT4O02eI",
+      "name": "psSystem",
+      "x": 225,
+      "y": 180,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "RaXIqZID",
+            "port": "out"
+          }
+        },
+        {
+          "name": "reset"
+        }
+      ]
+    },
+    {
+      "id": "LlavjN5e2",
+      "name": "Show Texture",
+      "x": 240,
+      "y": 255,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "texture",
+          "source": {
+            "id": "BT4O02eI",
+            "port": "positions0"
+          }
+        },
+        {
+          "name": "position",
+          "value": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "size",
+          "value": [
+            128,
+            128
+          ]
+        }
+      ]
+    },
+    {
+      "id": "68x0nKUlv",
+      "name": "psDraw",
+      "x": 225,
+      "y": 868,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "aOH9mnl3M",
+            "port": "out"
+          }
+        },
+        {
+          "name": "colorTexture",
+          "source": {
+            "id": "4tbrzJCjE",
+            "port": "texture"
+          }
+        },
+        {
+          "name": "spriteTexture"
+        },
+        {
+          "name": "showNormals",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "Gzr7pGzw8",
+      "name": "psAddCurlNoise",
+      "x": 465,
+      "y": 810,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "eQ9J07CvW",
+            "port": "out"
+          }
+        },
+        {
+          "name": "noiseScale",
+          "value": 0.45
+        },
+        {
+          "name": "speed",
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "-32FSWo0U",
+      "name": "psAddCurlNoiseBasedOnLife",
+      "x": 465,
+      "y": 870,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "Gzr7pGzw8",
+            "port": "out"
+          }
+        },
+        {
+          "name": "noiseScale",
+          "value": 2
+        },
+        {
+          "name": "speed",
+          "value": 0.12
+        }
+      ]
+    },
+    {
+      "id": "eQ9J07CvW",
+      "name": "psAddWind",
+      "x": 465,
+      "y": 750,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "ISmBsc5j",
+            "port": "out"
+          }
+        },
+        {
+          "name": "windDirection",
+          "value": [
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aOH9mnl3M",
+      "name": "Either",
+      "x": 225,
+      "y": 750,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in1",
+          "source": {
+            "id": "GvJ_dc5w",
+            "port": "out"
+          }
+        }
+      ]
+    },
+    {
+      "id": "4tbrzJCjE",
+      "name": "Texture",
+      "x": 285,
+      "y": 810,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "url",
+          "value": "assets/nodes-pink-orange-blue.jpg"
+        }
+      ]
+    },
+    {
+      "id": "jE4h8cUB",
+      "name": "FPS Counter",
+      "x": 225,
+      "y": -45,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "UBrgG4V7",
+            "port": "out"
+          }
+        },
+        {
+          "name": "t",
+          "value": 0
+        },
+        {
+          "name": "enabled",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "IeCblwhs",
+      "name": "psCubePositionsGenerator",
+      "x": 495,
+      "y": 555,
+      "templateName": "Custom",
+      "params": []
+    },
+    {
+      "id": "ISmBsc5j",
+      "name": "psUpdateLife",
+      "x": 225,
+      "y": 450,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "BT4O02eI",
+            "port": "out"
+          }
+        },
+        {
+          "name": "speed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "GvJ_dc5w",
+      "name": "psRespawn",
+      "x": 225,
+      "y": 615,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "ISmBsc5j",
+            "port": "out"
+          }
+        },
+        {
+          "name": "initialPositionsTex",
+          "source": {
+            "id": "5RY2137z",
+            "port": "positionsTexture"
+          }
+        },
+        {
+          "name": "position",
+          "value": [
+            -6,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crm0qMj6",
+      "name": "Show Texture",
+      "x": 270,
+      "y": 315,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "LlavjN5e2",
+            "port": "out"
+          }
+        },
+        {
+          "name": "texture",
+          "source": {
+            "id": "BT4O02eI",
+            "port": "ageLifetime0"
+          }
+        },
+        {
+          "name": "position",
+          "value": [
+            128,
+            0
+          ]
+        },
+        {
+          "name": "size",
+          "value": [
+            128,
+            128
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dQHVVpp7",
+      "name": "psAddNoise",
+      "x": 630,
+      "y": 810,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "noiseScale",
+          "value": 0.33
+        },
+        {
+          "name": "speed",
+          "value": 1.28
+        }
+      ]
+    },
+    {
+      "id": "5RY2137z",
+      "name": "psSpherePositionsGenerator",
+      "x": 270,
+      "y": 555,
+      "templateName": "Custom",
+      "params": []
+    }
+  ],
+  "comments": [
+    {
+      "id": "aEL-4-GD",
+      "x": 435,
+      "y": 435,
+      "width": 180,
+      "height": 40,
+      "fontSize": 10,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        0.2
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "Increase age of particle until it reaches it's life time.",
+      "collapseFlags": {
+        "backgroundColor": false,
+        "text": false
+      }
+    },
+    {
+      "id": "94tliUAUU",
+      "x": 705,
+      "y": 870,
+      "width": 180,
+      "height": 24,
+      "fontSize": 10,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        0.2
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "Wind sway",
+      "collapseFlags": {
+        "backgroundColor": false,
+        "text": false
+      }
+    },
+    {
+      "id": "Vzuw9B63s",
+      "x": 435,
+      "y": 180,
+      "width": 180,
+      "height": 141,
+      "fontSize": 10,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        0.2
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "Let's create a basic GPGPU ping pong FBO particle system.\n\nPositions are stored in a ping pong texture.\n\nOffsets used for instancing are actually texture coordinates used to find a given instance position.\n",
+      "collapseFlags": {
+        "backgroundColor": false,
+        "text": false
+      }
+    },
+    {
+      "id": "kIlgObylP",
+      "x": 225,
+      "y": 915,
+      "width": 180,
+      "height": 40,
+      "fontSize": 10,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        0.2
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "Draw particles as instanced quads sphere impostors.",
+      "collapseFlags": {
+        "backgroundColor": false,
+        "text": false
+      }
+    },
+    {
+      "id": "cHZRUUZXy",
+      "x": 465,
+      "y": 675,
+      "width": 180,
+      "height": 40,
+      "fontSize": 10,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        0.2
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "Add liquid/smoke like noise movement during transition\n",
+      "collapseFlags": {
+        "backgroundColor": false,
+        "text": false
+      }
+    },
+    {
+      "id": "h8dBnyRi",
+      "x": 645,
+      "y": 180,
+      "width": 180,
+      "height": 100,
+      "fontSize": 10,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        0.2
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "A basic particle system should be just emitting.\n\nWhen a particle dies, it should respawn at it's initial position.",
+      "collapseFlags": {
+        "backgroundColor": false,
+        "text": false
+      }
+    },
+    {
+      "id": "RimgJfBL",
+      "x": 540,
+      "y": -195,
+      "width": 268,
+      "height": 50,
+      "fontSize": 10,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "This graph shows how to create a GPGPU Particle system simulating smoke with curl noise.",
+      "collapseFlags": {}
+    },
+    {
+      "id": "Hm_t_yvAh",
+      "x": 225,
+      "y": -195,
+      "width": 300,
+      "height": 50,
+      "fontSize": 24,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "GPU Particles",
+      "collapseFlags": {}
+    }
+  ]
+}

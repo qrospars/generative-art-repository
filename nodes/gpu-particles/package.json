@@ -1,0 +1,16 @@
+{
+  "name": "gpu-particles",
+  "description": "GPGPU Particle system simulating smoke with curl noise.",
+  "private": true,
+  "dependencies": {
+    "debounce": "^1.2.1",
+    "fit-rect": "^1.0.3",
+    "pex-cam": "^2.8.0",
+    "pex-color": "^1.1.1",
+    "pex-context": "^2.10.4",
+    "pex-io": "^2.1.0",
+    "pex-math": "^3.0.0-4",
+    "pex-random": "^1.0.1",
+    "primitive-geometry": "^1.2.1"
+  }
+}

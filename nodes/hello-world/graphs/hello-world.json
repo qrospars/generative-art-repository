@@ -1,0 +1,136 @@
+{
+  "id": "ac7bca20-1cdf-11ea-afd8-011be48ef2ca",
+  "version": "1.0.0-beta.2",
+  "name": "hello-world",
+  "nodes": [
+    {
+      "id": "oBsaeUZeO",
+      "name": "Say It",
+      "x": -195,
+      "y": -44,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "name",
+          "source": {
+            "id": "CP9JYXONr",
+            "port": "name out"
+          }
+        },
+        {
+          "name": "repeatNumber",
+          "public": true,
+          "value": 2
+        },
+        {
+          "name": "Say it!",
+          "public": true
+        }
+      ]
+    },
+    {
+      "id": "CP9JYXONr",
+      "name": "Your Name",
+      "x": -194.20806617698372,
+      "y": -175.8560513469181,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "name",
+          "public": true,
+          "value": "Qt"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": "jY9N3XDSC",
+      "x": -194.20806617698372,
+      "y": -345.7919338230163,
+      "width": 259,
+      "height": 50,
+      "fontSize": 24,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "Hello World",
+      "collapseFlags": {}
+    },
+    {
+      "id": "9dvApT8X5",
+      "x": 75,
+      "y": -345,
+      "width": 229,
+      "height": 79,
+      "fontSize": 14,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "This graph explains basics of working with Nodes.",
+      "collapseFlags": {}
+    },
+    {
+      "id": "C7I8vaxO",
+      "x": 75,
+      "y": -186.03620052994438,
+      "width": 229,
+      "height": 40,
+      "fontSize": 12,
+      "backgroundColor": [
+        0.7700166001889435,
+        0.7298696696634296,
+        0.46590849149364727,
+        1
+      ],
+      "textColor": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "text": "1. Select this node and enter your name in the inspector on the right.",
+      "collapseFlags": {}
+    },
+    {
+      "id": "xveej8nE",
+      "x": 75,
+      "y": -52.199384440197036,
+      "width": 229,
+      "height": 40,
+      "fontSize": 12,
+      "backgroundColor": [
+        0.7700166001889435,
+        0.7298696696634296,
+        0.46590849149364727,
+        1
+      ],
+      "textColor": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "text": "2. Select this node and click \"Say it!\" button in the inspector on the right.",
+      "collapseFlags": {}
+    }
+  ]
+}

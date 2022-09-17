@@ -1,0 +1,148 @@
+{
+  "id": "9dea15d0-369e-11ed-9b3c-0dc1324805d4",
+  "version": "1.0.0-beta.2",
+  "name": "my-first-graph",
+  "nodes": [
+    {
+      "id": "jOD5h7EEL",
+      "name": "Canvas",
+      "x": -168,
+      "y": -351,
+      "templateName": "Custom",
+      "params": []
+    },
+    {
+      "id": "rHScTHfeG",
+      "name": "Draw Grid",
+      "x": -203,
+      "y": -118,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "wXdKiCBkY",
+            "port": "out"
+          }
+        },
+        {
+          "name": "mouse",
+          "source": {
+            "id": "z-BWy3WaV",
+            "port": "mouse"
+          }
+        }
+      ]
+    },
+    {
+      "id": "zugGLAWOp",
+      "name": "Circle",
+      "x": -237,
+      "y": 54,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "23nBguhVr",
+            "port": "out1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nl-_HOJnj",
+      "name": "Rectangle",
+      "x": -106,
+      "y": 52,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "23nBguhVr",
+            "port": "out2"
+          }
+        },
+        {
+          "name": "color",
+          "value": [
+            0,
+            0.9054331714703076,
+            0.8561220907952971,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GUCu7C6oE",
+      "name": "Triangle",
+      "x": 35,
+      "y": 49,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "23nBguhVr",
+            "port": "out3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "23nBguhVr",
+      "name": "Random Shape",
+      "x": -205,
+      "y": -66,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "rHScTHfeG",
+            "port": "out"
+          }
+        }
+      ]
+    },
+    {
+      "id": "z-BWy3WaV",
+      "name": "Mouse",
+      "x": -78,
+      "y": -165,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "wXdKiCBkY",
+            "port": "out"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wXdKiCBkY",
+      "name": "Save Screenshot",
+      "x": -166,
+      "y": -283,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "jOD5h7EEL",
+            "port": "out"
+          }
+        },
+        {
+          "name": "Save Screenshot",
+          "public": true
+        }
+      ]
+    }
+  ],
+  "comments": []
+}

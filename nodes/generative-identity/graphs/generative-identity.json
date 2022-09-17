@@ -1,0 +1,227 @@
+{
+  "id": "fabdd250-1c35-11ea-8928-0d28df169de6",
+  "version": "1.0.0-beta.2",
+  "name": "generative-identity",
+  "nodes": [
+    {
+      "id": "2QQ3FfNq",
+      "name": "Context 2D",
+      "x": -300,
+      "y": -165,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "resolution",
+          "public": true,
+          "value": "1740 x 1230 - A6 Postcard (148mm x 105mm @ 300dpi)"
+        },
+        {
+          "name": "portrait",
+          "value": false
+        },
+        {
+          "name": "align",
+          "value": "center"
+        }
+      ]
+    },
+    {
+      "id": "JFx9Pl3h",
+      "name": "Animated Circles",
+      "x": -300,
+      "y": 104.39687727220291,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "HvCFz2ki",
+            "port": "out"
+          }
+        },
+        {
+          "name": "paused",
+          "public": true,
+          "value": false
+        },
+        {
+          "name": "color1",
+          "public": true,
+          "value": [
+            1,
+            0.8980392156862745,
+            0.8901960784313725,
+            1
+          ]
+        },
+        {
+          "name": "color2",
+          "public": true,
+          "value": [
+            1,
+            0.41568627450980394,
+            0.23137254901960785,
+            1
+          ]
+        },
+        {
+          "name": "color3",
+          "public": true,
+          "value": [
+            0.4980392156862745,
+            0.5019607843137255,
+            0.9725490196078431,
+            1
+          ]
+        },
+        {
+          "name": "color4",
+          "public": true,
+          "value": [
+            0.29411764705882354,
+            0.9686274509803922,
+            0.7529411764705882,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HvCFz2ki",
+      "name": "Background",
+      "x": -300,
+      "y": 14.396877272202914,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "8ckSxVER",
+            "port": "out"
+          }
+        },
+        {
+          "name": "color",
+          "public": true,
+          "value": [
+            0,
+            0.011764705882352941,
+            0.9490196078431372,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "YZbvKF4X",
+      "name": "Text",
+      "x": -300,
+      "y": 194,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "JFx9Pl3h",
+            "port": "out"
+          }
+        },
+        {
+          "name": "text",
+          "value": "ID"
+        },
+        {
+          "name": "position",
+          "value": [
+            0.51,
+            0.5
+          ]
+        },
+        {
+          "name": "size",
+          "value": 0.34
+        },
+        {
+          "name": "typeface",
+          "value": "sans-serif"
+        },
+        {
+          "name": "color",
+          "public": true,
+          "value": [
+            0.2,
+            0.2,
+            0.2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8ckSxVER",
+      "name": "Save Screenshot",
+      "x": -300,
+      "y": -75.60312272779709,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "2QQ3FfNq",
+            "port": "out"
+          }
+        },
+        {
+          "name": "Save Screenshot",
+          "public": true
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": "jwx0h-7a",
+      "x": 15,
+      "y": -240,
+      "width": 268,
+      "height": 50,
+      "fontSize": 10,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "This graph shows how to draw an animation using 2D HTML Canvas with print ready export.",
+      "collapseFlags": {}
+    },
+    {
+      "id": "EupFkN8dp",
+      "x": -300,
+      "y": -240,
+      "width": 300,
+      "height": 50,
+      "fontSize": 24,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "Generative Identity",
+      "collapseFlags": {}
+    }
+  ]
+}

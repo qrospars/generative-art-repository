@@ -1,0 +1,566 @@
+{
+  "id": "bb4a0c50-1c13-11ea-9d47-d1e83c1bff63",
+  "version": "1.0.0-beta.2",
+  "name": "generative-geometry",
+  "nodes": [
+    {
+      "id": "gD3bmfWq",
+      "name": "Context",
+      "x": -15,
+      "y": -225,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "resolution",
+          "value": "W x H - Inerit"
+        },
+        {
+          "name": "portrait",
+          "value": false
+        },
+        {
+          "name": "align",
+          "value": "center"
+        },
+        {
+          "name": "Auto clear",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "XHmXz1GAC",
+      "name": "Draw Geometry",
+      "x": -15,
+      "y": 0,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "53Y-ht-L_",
+            "port": "out"
+          }
+        },
+        {
+          "name": "enabled",
+          "value": false
+        },
+        {
+          "name": "geom",
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "53Y-ht-L_",
+      "name": "Raw Camera",
+      "x": -15,
+      "y": -75,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "dQmzYO0U",
+            "port": "out"
+          }
+        },
+        {
+          "name": "background color",
+          "value": [
+            0.9254901960784314,
+            0.9411764705882353,
+            0.9450980392156862,
+            1
+          ]
+        },
+        {
+          "name": "near",
+          "value": 1
+        },
+        {
+          "name": "far",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "id": "NyDdVPZf",
+      "name": "Torus",
+      "x": 255,
+      "y": -135,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "R",
+          "value": 0.4
+        },
+        {
+          "name": "r",
+          "value": 0.2
+        },
+        {
+          "name": "majorSegments",
+          "value": 32
+        },
+        {
+          "name": "minorSegments",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "id": "RCFOQk-4",
+      "name": "Voxelize",
+      "x": 210,
+      "y": -75,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "geomIn",
+          "source": {
+            "id": "NyDdVPZf",
+            "port": "geometry"
+          }
+        },
+        {
+          "name": "resolution",
+          "value": 0.05
+        }
+      ]
+    },
+    {
+      "id": "xogOE3v4",
+      "name": "Instanced Cubes",
+      "x": 30,
+      "y": 90,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "points",
+          "source": {
+            "id": "4QRe7q1l",
+            "port": "points"
+          }
+        },
+        {
+          "name": "resolution",
+          "value": 0.02
+        }
+      ]
+    },
+    {
+      "id": "nCj-yjko",
+      "name": "Draw Instanced Cubes",
+      "x": -15,
+      "y": 165,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "XHmXz1GAC",
+            "port": "out"
+          }
+        },
+        {
+          "name": "enabled",
+          "value": false
+        },
+        {
+          "name": "geom",
+          "source": {
+            "id": "xogOE3v4",
+            "port": "instancedGeometry"
+          }
+        }
+      ]
+    },
+    {
+      "id": "iowQt5SR",
+      "name": "Sphere",
+      "x": 255,
+      "y": -180,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "r",
+          "value": 0.5
+        },
+        {
+          "name": "segments",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "id": "a5Obke43",
+      "name": "Bunny",
+      "x": 255,
+      "y": -225,
+      "templateName": "Custom",
+      "params": []
+    },
+    {
+      "id": "YpP5-UnU",
+      "name": "Space Colonisation Tree",
+      "x": 210,
+      "y": 90,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "XHmXz1GAC",
+            "port": "out"
+          }
+        },
+        {
+          "name": "pointsIn",
+          "source": {
+            "id": "4QRe7q1l",
+            "port": "points"
+          }
+        }
+      ]
+    },
+    {
+      "id": "4QRe7q1l",
+      "name": "Voxels to Points",
+      "x": 210,
+      "y": 0,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "voxelsIn",
+          "source": {
+            "id": "RCFOQk-4",
+            "port": "voxels"
+          }
+        }
+      ]
+    },
+    {
+      "id": "o-s_SnJO",
+      "name": "Draw Spheres",
+      "x": -15,
+      "y": 240,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "nCj-yjko",
+            "port": "out"
+          }
+        },
+        {
+          "name": "color",
+          "value": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "points",
+          "source": {
+            "id": "YpP5-UnU",
+            "port": "points"
+          }
+        },
+        {
+          "name": "enabled",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "MgEPU6Dw",
+      "name": "Draw Geom",
+      "x": -15,
+      "y": 315,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "o-s_SnJO",
+            "port": "out"
+          }
+        },
+        {
+          "name": "enabled",
+          "value": true
+        },
+        {
+          "name": "geom",
+          "source": {
+            "id": "AHABntrxS",
+            "port": "render geom"
+          }
+        }
+      ]
+    },
+    {
+      "id": "AHABntrxS",
+      "name": "Points To Iso Surface",
+      "x": 210,
+      "y": 180,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "YpP5-UnU",
+            "port": "out"
+          }
+        },
+        {
+          "name": "points",
+          "source": {
+            "id": "YpP5-UnU",
+            "port": "points"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dQmzYO0U",
+      "name": "Message Div",
+      "x": -15,
+      "y": -150,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "gD3bmfWq",
+            "port": "out"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ccn2vs23",
+      "name": "Export OBJ",
+      "x": 210,
+      "y": 315,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "geometry",
+          "source": {
+            "id": "AHABntrxS",
+            "port": "export geom"
+          }
+        },
+        {
+          "name": "Export OBJ"
+        }
+      ]
+    },
+    {
+      "id": "IjMzb1x6",
+      "name": "Export STL",
+      "x": 360,
+      "y": 315,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "geometry",
+          "source": {
+            "id": "AHABntrxS",
+            "port": "export geom"
+          }
+        },
+        {
+          "name": "Export STL (Binary)"
+        },
+        {
+          "name": "Export STL (Text)"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": "VJSQVm7e",
+      "x": 435,
+      "y": -225,
+      "width": 229,
+      "height": 40,
+      "fontSize": 12,
+      "backgroundColor": [
+        0.7700166001889435,
+        0.7298696696634296,
+        0.46590849149364727,
+        1
+      ],
+      "textColor": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "text": "1. Choose our base geometry by connecting it to Voxelize step",
+      "collapseFlags": {}
+    },
+    {
+      "id": "lxVQR_CW",
+      "x": 435,
+      "y": -75,
+      "width": 229,
+      "height": 40,
+      "fontSize": 12,
+      "backgroundColor": [
+        0.7700166001889435,
+        0.7298696696634296,
+        0.46590849149364727,
+        1
+      ],
+      "textColor": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "text": "2. Convert geometry into an array of \"3d pixels\" called Voxels.",
+      "collapseFlags": {}
+    },
+    {
+      "id": "D7MSDxYQ",
+      "x": 435,
+      "y": 0,
+      "width": 229,
+      "height": 40,
+      "fontSize": 12,
+      "backgroundColor": [
+        0.7700166001889435,
+        0.7298696696634296,
+        0.46590849149364727,
+        1
+      ],
+      "textColor": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "text": "3. Generate list of points from the voxel grid",
+      "collapseFlags": {}
+    },
+    {
+      "id": "zW4MRdGL",
+      "x": -270,
+      "y": 0,
+      "width": 229,
+      "height": 60,
+      "fontSize": 12,
+      "backgroundColor": [
+        0.723900017328442,
+        0.7239000173284895,
+        0.7239000173284866,
+        1
+      ],
+      "textColor": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "text": "Use \"enabled\" property of various Draw* nodes to visualise different parts of the process",
+      "collapseFlags": {}
+    },
+    {
+      "id": "6YVBpKCF",
+      "x": 435,
+      "y": 105,
+      "width": 230,
+      "height": 60,
+      "fontSize": 12,
+      "backgroundColor": [
+        0.7700166001889435,
+        0.7298696696634296,
+        0.46590849149364727,
+        1
+      ],
+      "textColor": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "text": "4. Run space coloonisation growth algorithm that spans the points generated from voxels",
+      "collapseFlags": {}
+    },
+    {
+      "id": "gfEIJ3W0",
+      "x": 435,
+      "y": 180,
+      "width": 229,
+      "height": 95,
+      "fontSize": 12,
+      "backgroundColor": [
+        0.7700166001889435,
+        0.7298696696634296,
+        0.46590849149364727,
+        1
+      ],
+      "textColor": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "text": "5. Convert points making the branches (result of space colonisation algorithm) into a signed distance field and then 3d mesh. Then calculate ambient occlusion (AO) for that mesh.",
+      "collapseFlags": {}
+    },
+    {
+      "id": "B1lutk6K",
+      "x": 60,
+      "y": -390,
+      "width": 359,
+      "height": 105,
+      "fontSize": 10,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "Converting geometry to a coral like 3d mesh via process called space colonisation.\n\nLearn more about the algorithm at http://algorithmicbotany.org/papers/colonization.egwnp2007.large.pdf\n\nhttp://www.sea-of-memes.com/LetsCode26/LetsCode26.html",
+      "collapseFlags": {}
+    },
+    {
+      "id": "sBphFFvSB",
+      "x": -255,
+      "y": -390,
+      "width": 300,
+      "height": 50,
+      "fontSize": 24,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "Generative Geometry",
+      "collapseFlags": {}
+    }
+  ]
+}

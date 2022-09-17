@@ -1,0 +1,10 @@
+{
+  "name": "my-first-project",
+  "description": "New empty project",
+  "private": true,
+  "dependencies": {
+    "canvas-screenshot": "^4.1.0",
+    "pex-color": "^1.1.1",
+    "pex-random": "^1.0.1"
+  }
+}
