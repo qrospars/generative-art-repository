@@ -6,13 +6,17 @@ import pygame as pg
 import numpy as np
 
 
-def glitch_effect_on_image():
+def glitch_effect_on_image(index):
     from glitch_this import ImageGlitcher
 
     glitcher = ImageGlitcher()
 
     # Apply a glitch effect
     glitch_img = glitcher.glitch_image(
-        './get-images/images/080.jpg', 5, color_offset=True)
+        'blender/first_render.png', 5, color_offset=True)
 
-    glitch_img.save('080.jpg')
+    glitch_img.save('blender'+str(index)+'.png')
+
+
+for i in range(10):
+    glitch_effect_on_image(i)
